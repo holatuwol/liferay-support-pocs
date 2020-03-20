@@ -34,6 +34,7 @@ import org.osgi.annotation.versioning.ProviderType;
 				"setVisible('emailFromAddress', getValue('sendEmailNotification'))",
 				"setVisible('emailFromName', getValue('sendEmailNotification'))",
 				"setVisible('emailSubject', getValue('sendEmailNotification'))",
+				"setVisible('emailTemplate', getValue('sendEmailNotification'))",
 				"setVisible('emailToAddress', getValue('sendEmailNotification'))",
 				"setVisible('published', FALSE)"
 			},
@@ -71,7 +72,7 @@ import org.osgi.annotation.versioning.ProviderType;
 							value = {
 								"sendEmailNotification", "emailFromName",
 								"emailFromAddress", "emailToAddress",
-								"emailSubject", "published"
+								"emailSubject", "emailTemplate", "published"
 							}
 						)
 					}
@@ -101,6 +102,9 @@ public interface DDMFormInstanceSettings {
 
 	@DDMFormField(label = "%subject")
 	public String emailSubject();
+
+	@DDMFormField(label = "Email Template", properties = {"displayStyle=multiline"}, type = "text")
+	public String emailTemplate();
 
 	@DDMFormField(
 		label = "%to-address",
