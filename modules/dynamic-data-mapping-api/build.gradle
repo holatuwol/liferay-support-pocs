@@ -1,0 +1,6 @@
+dependencies {
+	compileInclude group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api"
+
+	compileOnly group: "org.osgi", name: "org.osgi.annotation.versioning"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
+}
